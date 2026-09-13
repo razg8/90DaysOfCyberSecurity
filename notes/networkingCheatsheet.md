@@ -45,3 +45,6 @@
 - Software as a Service (SaaS) : On-demand software, no install, no management or upgrade software, just log in and use; allows managemt of data and applications, e.g Google Mail
 - Infrastructure as a Service (IaaS) : (Hardware as a Service) installing your own software, managing your own software, eg Web server providers
 - Platform as a Service (PaaS) : You manage everything, someone else handles the platform, you handle the development, develop your app from what's available on the platform, eg salesforce.com
+
+  <img width="1281" height="745" alt="image" src="https://github.com/user-attachments/assets/651ecb2f-b5fe-4718-893b-bd3d52d3d851" />
+
