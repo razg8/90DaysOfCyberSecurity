@@ -1,4 +1,4 @@
-## Networking
+## Networking 1
 ### OSI
 - Layer 7 Application : Your eyes
 - Layer 6 Presentation : Application Encryption (SSL / TLS)
@@ -45,3 +45,93 @@
 - Software as a Service (SaaS) : On-demand software, no install, no management or upgrade software, just log in and use; allows managemt of data and applications, e.g Google Mail
 - Infrastructure as a Service (IaaS) : (Hardware as a Service) installing your own software, managing your own software, eg Web server providers
 - Platform as a Service (PaaS) : You manage everything, someone else handles the platform, you handle the development, develop your app from what's available on the platform, eg salesforce.com
+
+<img width="1281" height="745" alt="image" src="https://github.com/user-attachments/assets/651ecb2f-b5fe-4718-893b-bd3d52d3d851" />
+
+### TCP - Transmission Control Protocol
+- Connection-oriented : A formal connection setup and close
+- "Reliable" delivery: always result in an acknowledgemnt if that device has received the data
+- Flow control: receiver can amange how much data is sent (speed up or slow down)
+
+### UDP - User Datagram Protocol
+- Connectionless: No formal open or close to the connection
+- "Unreliable" delivery: no acknowledgements received when using UDP, can't guarantee if information has been delivered
+- No error recovery
+- No flow control
+
+### Port numbers
+- The IP gets delivered from one IP address to another IP address
+- Each IP address has multiple rooms (TCP/UDP ports)
+- Deliver to appropriate application running on that server
+- Port number are for communication, not security
+
+### IPv4 sockets
+- Server IP address, protocol, server application port number
+- Client IP address, protocol, client port number
+- Non-ephemeral ports - permanent port numbers: ports 0 through 1,023 for server side
+- When connecting to a server almost always using port 80 or 443
+- Ephemeral ports - temporary port numbers: ports 1,024 through 65,535 for client side
+- Reality is: *any device can use any port number that it wants to*
+
+### <u>Protocols</u>
+### FTP - File Transfer Protocol
+- Transfers files between systems
+- Generic file transferm method for all operating systems
+- tcp/20 (active mode data): file transfer process
+- tcp/21 (control): send control information
+- You can also: list information in a particular directory, add different files, delete,  rename, and perform other types of file maintanence
+
+### SSH - Secure Shell
+- Text-based console communication to remote device, able to configure and manage the device over cli
+- All communication is all sent in encrypted form
+- tcp/22
+
+### SFTP - Secure FTP
+- Generic file transfer with security, encrypted by default
+- Uses the SSH file transfer protocol (tcp/22)
+
+### Telnet - Telecommunication Network
+- Non-encrypted form of terminal communication
+- tcp/23 
+
+### SMTP - Simple Mail Transfer Protocol
+- Server to server email transfer
+- tcp/25 (plaintext)
+- tcp/587 (TLS encryption)
+- Also used to send mail from a device to a mail server
+- Other protocols are used for clients to received emails - IMAP, POP3
+
+### DNS - Domain Name System
+- Converts names to IP addresses- udp/53
+- www.professormesser.com = 162.159.246.164
+- Large transfers may use tcp/53
+
+### DHCP - Dynamic Host Configuration Protocl
+- Automated configuration of IP address, subnet mask and other options
+- udp/67, udp/68
+- Requires a DHCP server
+- Dynamic / pooled: Assigned in real-time from a pool, each system is given al ease, must renew at set intervals
+- DHCP reservation: addresses are assigned by MAC address in the DHCP server
+
+### TFTP - Trivial File Transfer Protocol
+- udp/69
+- Very simple file transfer application
+
+### HTTP and HTTPS
+- Hypertext Transfer Protocol
+- Communication in the browser
+- tcp/80 - in plaintext (HTTP)
+- tcp/443 - encrypted over SSL or TLS (HTTPS)   
+
+### NTP - Network Time Protocol
+- Switches, routers, firewalls, servers, workstations
+- Every device has its own clock
+- udp/123
+ 
+### SNMP - Simple Network Management Protocol
+- Gather statistics from network devices
+- udp/161
+- v1- the original: structured tables, in the clear
+- v2: data type enhancemenets, bulk transfers, in the clear
+- v3: message integrity, authentication, encryption
+- SNMP traps: alerts and notifications from the network devices (udp/162)
